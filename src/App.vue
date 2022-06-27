@@ -25,6 +25,9 @@ const addTodo = () => {
     done: false,
     createdAt: new Date().getTime(),
   });
+
+  input_content.value = ''
+  input_category.value = null
 };
 
 watch(
@@ -106,7 +109,9 @@ onMounted(() => {
           <div class="todo-content">
             <input type="text" v-model="todo.content" />
           </div>
-
+          <div class="actions">
+            <button class="delete" @click="removeTodo(todo)">Delete</button>
+          </div>
         </div>
       </div>
     </section>
